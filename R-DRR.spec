@@ -4,20 +4,20 @@
 #
 Name     : R-DRR
 Version  : 0.0.3
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/DRR_0.0.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DRR_0.0.3.tar.gz
 Summary  : Dimensionality Reduction via Regression
 Group    : Development/Tools
 License  : GPL-3.0
+Requires: R-CVST
+Requires: R-kernlab
 BuildRequires : R-CVST
 BuildRequires : R-kernlab
 BuildRequires : buildreq-R
 
 %description
-# DRR
-[![Travis Build Status](https://travis-ci.org/gdkrmr/DRR.svg?branch=master)](https://travis-ci.org/gdkrmr/DRR)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/DRR)](https://cran.r-project.org/package=DRR)
+via Regression using Kernel Ridge Regression.
 
 %prep
 %setup -q -c -n DRR
@@ -26,13 +26,13 @@ BuildRequires : buildreq-R
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552955917
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569355640
 
 %install
-export SOURCE_DATE_EPOCH=1552955917
+export SOURCE_DATE_EPOCH=1569355640
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -61,12 +61,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  DRR || :
+R CMD check --no-manual --no-examples --no-codoc DRR || :
 
 
 %files
