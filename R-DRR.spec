@@ -4,7 +4,7 @@
 #
 Name     : R-DRR
 Version  : 0.0.3
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/DRR_0.0.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DRR_0.0.3.tar.gz
 Summary  : Dimensionality Reduction via Regression
@@ -15,9 +15,12 @@ Requires: R-kernlab
 BuildRequires : R-CVST
 BuildRequires : R-kernlab
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
-via Regression using Kernel Ridge Regression.
+# DRR
+[![Travis Build Status](https://travis-ci.org/gdkrmr/DRR.svg?branch=master)](https://travis-ci.org/gdkrmr/DRR)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/DRR)](https://cran.r-project.org/package=DRR)
 
 %prep
 %setup -q -c -n DRR
@@ -27,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569355640
+export SOURCE_DATE_EPOCH=1571820764
 
 %install
-export SOURCE_DATE_EPOCH=1569355640
+export SOURCE_DATE_EPOCH=1571820764
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
