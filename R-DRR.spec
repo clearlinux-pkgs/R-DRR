@@ -4,7 +4,7 @@
 #
 Name     : R-DRR
 Version  : 0.0.4
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/DRR_0.0.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DRR_0.0.4.tar.gz
 Summary  : Dimensionality Reduction via Regression
